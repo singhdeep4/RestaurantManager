@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Manager — Dashboard</title>
+  <meta name="description" content="Full-featured Restaurant Manager application with dashboard, menu, orders, customers and staff management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">🍽️</span>
+      <h1>RestroMgr</h1>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-link active" data-page="dashboard">
+        <span class="nav-icon">📊</span> Dashboard
+      </a>
+      <a href="#" class="nav-link" data-page="customers">
+        <span class="nav-icon">👥</span> Customers
+      </a>
+      <a href="#" class="nav-link" data-page="staff">
+        <span class="nav-icon">🧑‍🍳</span> Staff
+      </a>
+      <a href="#" class="nav-link" data-page="menu">
+        <span class="nav-icon">📋</span> Menu
+      </a>
+      <a href="#" class="nav-link" data-page="orders">
+        <span class="nav-icon">🧾</span> Orders
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <p>&copy; 2026 RestroMgr</p>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="mainContent">
+    <!-- Header -->
+    <header class="top-bar">
+      <button class="hamburger" id="hamburger">☰</button>
+      <h2 class="page-title" id="pageTitle">Dashboard</h2>
+      <div class="top-bar-right">
+        <span class="clock" id="clock"></span>
+      </div>
+    </header>
+
+    <!-- Page container (content injected by JS) -->
+    <section class="page-container" id="pageContainer">
+      <!-- JS fills this -->
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Title</h3>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- form injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
