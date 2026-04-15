@@ -11,8 +11,18 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
   ssl: process.env.DB_HOST && process.env.DB_HOST !== 'localhost' ? {
-    rejectUnauthorized: false // Required for most cloud providers like Aiven/Render
+    rejectUnauthorized: false
   } : false
 });
+
+// Immediate test connection to log errors clearly in Render
+pool.getConnection()
+  .then(conn => {
+    console.log('✅ Connected to MySQL Database!');
+    conn.release();
+  })
+  .catch(err => {
+    console.error('❌ DATABASE CONNECTION ERROR:', err.message);
+  });
 
 module.exports = pool;
